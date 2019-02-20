@@ -1,0 +1,127 @@
+@charset "utf-8";
+/*字体红色*/
+.a2{
+				color: red!important;
+			}
+/*红底圈圈*/
+.a3{
+		width: 16px;
+		height: 16px;
+		border-radius: 8px;
+		background: red;
+		font-size: 10px;
+		color: white;
+		text-align: center;
+		line-height: 16px;
+		}			
+.nav,.logo{
+	width: 1200px;
+	margin: 0 auto;
+}
+/*nav*/
+nav{
+	height: 30px;
+	background: #f6f6f6;
+	.nav{
+		position:relative;
+		.a3{
+			position: absolute;
+			right: 139px;
+			top:7px;
+		}
+		ul li{
+			height:30px;
+			-background: yellowgreen;
+			float: right;
+			margin-right: 20px;
+			a{
+				line-height: 30px;
+				text-align: center;
+				color: #333;
+				font-size: 12px;
+			}
+		}
+		
+	}
+}
+/*aside*/
+aside{
+	width: 36px;
+	height: 100%;
+	background: black;
+	position: fixed;
+	right: 0;
+	top: 0;
+	ul{
+		position: relative;
+	}
+	i{
+		color: #d7d7d7!important;
+		font-size: 20px!important;
+		position: absolute;	
+		left: 30%;
+	}
+	li:nth-child(1){
+		i{
+			top:5%;
+		}
+		height: 50px;
+		border-bottom: 1px solid #555555;
+	}
+	li:nth-child(2){
+		.icon-gouwu{
+			top:16%;
+			}
+		.i2{
+			top:24%;
+			font-size: 12px!important;
+			width: 12px;
+			left: 44%;
+		}
+		div{
+			position: absolute;
+			top: 37%;
+			left: 40%;
+		}
+		height: 119px;
+		border-bottom: 1px solid #555555;
+	}
+	li:nth-child(3){
+		i{
+			top: 53%;
+		}
+		height: 77px;
+	}
+	li:nth-child(4){
+		i{
+			top: 70%;
+		}
+	}
+	li:nth-child(5){
+		i{
+			bottom: -36%;
+		}
+		height: 50px;
+	}
+	li:nth-child(6){
+		i{
+			bottom: -56%;
+		}
+		height: 50px;
+	}
+	li:nth-child(7){
+		i{
+			bottom: -70%;
+		}
+		height: 50px;
+	}
+}
+/*logo*/
+.logo{
+	height: 85px;
+	background: red;
+	h1{
+		
+	}
+}
+

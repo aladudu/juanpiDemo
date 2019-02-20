@@ -1,0 +1,24 @@
+(function($) {
+  // 排除首页及已经有此广告的页面
+  if (typeof(is_index) !== 'undefined') {
+    return
+  }
+  if ($.trim($('.side-ad').html()) === '') {
+    getSlideAd();
+  }
+  function getSlideAd() {
+    var ugctag = 'C2';
+    $.ajax({
+      url: '//www.juanpi.com/Index/getIndexAd/ugctag/' + ugctag,
+      type: 'GET',
+      dataType: 'jsonp',
+      jsonpCallback: 'getindexad',
+      cache: true,
+      success: function(data) {
+        if (data['cdh']) {
+          $('.side-complain').before($('<li class="normal side-ad" style="display:none">').show().append(data['cdh']));
+        }
+      }
+    })
+  }
+})(jQuery);
