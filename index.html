@@ -191,7 +191,16 @@
 		</div>
 	</div>
 </div>
-
+<!--选项卡底栏-->
+<div id="sel">
+	<div class="sel">
+		<div class="sel1">
+			<div>首页</div>
+			<div>...</div>
+			<div>尾页</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
 <script src="js/public.js"></script>
@@ -207,10 +216,10 @@ window.onload = function(){
 		//侧栏的特效
 		$("aside ul li a").hover(function(){
 			$(this).parent().find("div").css( {"display":"block"})	
-								.animate({"right":"36"},100)
+								.animate({"right":"36"},300)
 		},function(){
 			$(this).parent().find("div").css( {"display":"none"})
-								.animate({"right":"56"},500)
+								.animate({"right":"56"},300)
 		})
 		//返回顶部效果
 		document.onscroll = function(){
@@ -218,7 +227,7 @@ window.onload = function(){
 			if( h > 10 ){
 				$id("returnTop").style.display = "block";
 				$("#returnTop").click(function(){
-				 $('html , body').animate({scrollTop: 0},1500);
+				 $('html , body').animate({scrollTop: 0},500);
 				})
 			}
 		}
@@ -275,7 +284,7 @@ window.onload = function(){
 			for( var i=0; i<json.length; i++){
 				var pro = json[i];
 				str +=  `<li>
-							<a href="page.html">
+							<a href="page.html?price=${pro.price}&name=${pro.name}">
 								<img src="images/${pro.src}" alt="" />
 								<p>¥${pro.price}</p>
 								<p>${pro.name}</p>
@@ -299,9 +308,13 @@ window.onload = function(){
 			 "font-size":"12px",
 			 "margin":" 5px 0 "
 			})
-			//鼠标划过li，出现边框
-			
 		})
+		//点击尾页按钮做跳转到list.html，获取新的data1.json做布局
+		$(".sel1").children(2).click(function(){
+			location.href = "list.html"
+		})
+		
+}
 			
 /* 			<!-- deff.done(function(json){
 			var strCon = "";
@@ -380,6 +393,6 @@ window.onload = function(){
 				location.href = "shopcar.html";
 			}
 		}) --> */
-}
+
 	
 </script>

@@ -7,11 +7,13 @@
 
 .a4 { width: 76px; height: 40px; background: red; color: white; font-size: 14px; border-radius: 6px 6px 0 0; float: left; }
 
-.header { height: 200px; width: 200px; color: red; font-size: 18px; }
+.a5 { background: orange; color: red; }
+
+.header { height: 200px; width: 200px; color: red; font-size: 18px; overflow: hidden; }
 
 .footer { min-width: 220px; height: 320px; -background: orange; float: left; margin: 8px; -text-align: center; }
 
-.nav, .logo, #nav, .banner, .case { width: 1200px; margin: 0 auto; }
+.nav, .logo, #nav, .banner, .case, .sel { width: 1200px; margin: 0 auto; }
 
 /*nav*/
 nav { height: 30px; background: #f6f6f6; }
@@ -53,7 +55,7 @@ aside li:nth-child(7) div { width: 100px; height: 30px; line-height: 30px; botto
 aside li:nth-child(7) #returnTop { display: none; }
 
 /*logo*/
-.logo { height: 70px; -background: red; }
+.logo { height: 85px; -background: red; }
 .logo h1 { padding-top: 15px; float: left; }
 .logo ol { padding-top: 25px; margin-left: 460px; }
 .logo ol li { display: block; -background: blue; float: left; height: 30px; width: 141px; border-right: 1px dashed #CCCCCC; line-height: 30px; text-align: center; }
@@ -66,7 +68,7 @@ aside li:nth-child(7) #returnTop { display: none; }
 #nav { height: 40px; -background: yellow; }
 #nav div { float: left; text-align: center; line-height: 40px; margin-right: 25px; font-size: 12px; }
 #nav .n5 { display: none; position: absolute; }
-#nav .nd5:hover .n5 { display: block; }
+#nav .nd5:hover .n5 { display: block; z-index: 10; }
 
 /*分界线*/
 .fenjiexian { height: 2px; background: red; }
@@ -115,6 +117,15 @@ aside li:nth-child(7) #returnTop { display: none; }
 #case { background: #f6f6f6; }
 #case span { -background: yellow; margin-left: 10px; height: 64px; text-align: center; line-height: 64px; font-size: 20px; font-weight: bold; }
 #case span i { font-size: 20px; color: #CCCCCC; }
-#case .case { min-height: 600px; -background: pink; }
+#case .case { min-height: 600px; background: white; }
+
+/*底栏选项卡*/
+#sel { background: #f6f6f6; }
+#sel .sel { height: 150px; background: white; position: relative; position: relative; }
+#sel .sel .sel1 { position: absolute; left: 35%; top: 50%; }
+#sel .sel .sel1 div { height: 42px; text-align: center; line-height: 42px; border: 1px solid #ccc; float: left; background: #d7d7d7; font-size: 12px; color: #333; }
+#sel .sel .sel1 div:nth-child(1) { width: 92px; border-radius: 8px  0 0 8px; -background: pink; }
+#sel .sel .sel1 div:nth-child(2) { width: 40px; -background: red; }
+#sel .sel .sel1 div:nth-child(3) { width: 92px; border-radius: 0 8px 8px 0; -background: pink; }
 
 /*# sourceMappingURL=index.css.map */

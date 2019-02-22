@@ -5,8 +5,276 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>详情页</title>
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="icon/iconfont.css">
+	 <style>
+        *{margin:0;padding:0;}
+        ul,ol{list-style:none;}
+        #box {
+			position:relative;
+			margin: 0 0 0 32px;
+			width: 350px;
+			height:350px;
+        }
+        #box ul{
+            overflow: hidden;
+			position:absolute;
+			top:350px;
+			left:0;
+			width:350px;
+        }
+        #box li {
+            float: left;	 
+			border-top:none;
+        }
+		.small{
+			width:350px;
+			height:350px;	
+			background: red; 
+		}
+		.small img{
+			position:absolute;
+			top:0;
+			left:0;
+
+		}
+	    #big{
+				width:400px;
+				height:400px;
+				border:1px solid #ccc;
+				overflow:hidden;
+				position:absolute;
+				top:0;
+				left:360px;
+				-display:none;
+			}
+		#mask{
+				width:175.5px;
+				height:175.5px;
+				background:red;
+				opacity:0.4;
+				/* background: url(images/3m.jpg); */ 
+				position:absolute;
+				top:0;
+				left:0;
+				display:none;
+			}
+		.bigImage{
+				position:absolute;
+				top:0;
+				left:0;
+			}
+		#small{
+				position:relative;
+				cursor:move;  
+			}
+		#layer{
+			position:absolute;
+			top:0;
+			left:0;
+			width: 350px;
+			height: 350px;
+			background: gray;
+			opacity:0.4 ;
+			display:none;	
+		}
+		.shopinfo{
+			width: 433px;
+			height: 180px;
+			-background: pink;
+			position: absolute;
+			right: 36px;
+			top: 288px;
+			text-align: center;
+			font-size:30px;
+			color: red!important;
+		}
+    </style>
 </head>
 <body>
-	详情页
+	<!--nav-->
+		<nav class="clear_fix">
+			<div class="nav">
+				<div class="a3">0</div>
+				<ul>
+					<li class="li1"><a href="">客户服务</a>
+						<ol class="ol1">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">联系客服</a></li>
+						</ol>
+					</li>
+					<li><a href="">商家中心</a></li>
+					<li>
+						<a href="">
+							<i class="iconfont icon-gouwu a2"></i>
+							购物袋
+						</a>
+					</li>
+					<li><a href="">商家入驻</a></li>
+	
+					<li><a href="">我的订单</a></li>
+					<li><a href="reg.html" class="a2">免费注册</a></li>
+					<li><a href="log.html">登录</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--aside-->
+			<aside class="clear_fix">
+				<ul>
+					<li>
+						<a href=""><i class="iconfont icon-lianxiren"></i></a>
+						<div><img src="images/default-60.jpg" alt=""></div>
+					</li>
+					<li><a href="">
+							<i class="iconfont icon-gouwu"></i>
+							<i class="i2">购物袋</i>
+							<span class="a3">0</span>
+						</a></li>
+					<li>
+						<a href=""><i class="iconfont icon-xihuan"></i></a>
+						<div>我的收藏</div>
+					</li>
+					<li>
+						<a href=""><i class="iconfont icon-fufei"></i></a>
+						<div>我的优惠券</div>
+						</li>
+					<li>
+						<a href=""><i class="iconfont icon-yuyin"></i></a>
+						<div>意见反馈</div>
+						</li>
+					<li>
+						<a href=""><i class="iconfont icon-saoma"></i></a>
+						<div><img src="images/jp-app-index.png" alt=""></div>
+					</li>
+					<li>
+						<a href=""><i class="iconfont icon-dingwei" id="returnTop"></i></a>
+						<div>返回顶部</div>
+					</li>
+				</ul>
+			</aside>
+		<!--logo-->
+			<div id="logo" class="clear_fix">
+				<div class="logo">
+					<!--left-->
+					<h1>
+						<img src="images/logo_03.jpg" alt="">
+					</h1>
+					<!--center-->
+					<ol class="ol2">
+						<li><a href="">
+								<i class="iconfont icon-lishi"></i>
+								<span>10:00开抢</span>
+							</a>
+						</li>
+						<li><a href="">
+								<i class="iconfont icon-lishi"></i>
+								<span>买手砍价</span>
+							</a>
+						</li>
+						<li><a href="">
+								<i class="iconfont icon-lishi"></i>
+								<span>验货质检</span>
+							</a>
+						</li>
+					</ol>
+					<!--right-->
+					<input type="text" value="请输入想找的宝贝" id="in1">
+					<button><i class="iconfont icon-chazhao"></i></button>
+				</div>
+			</div>
+			<!--小导航栏，下面对应选项卡-->
+				<div id="nav" class="clear_fix">
+					<div class="a4">详情页</div>
+					<div>品牌折扣</div>
+					<div>9.9包邮</div>
+					<div>即将上线</div>
+					<div class="nd5">
+						<i class="iconfont icon-dianhua"></i>
+						手机版
+						<img src="images/jp-app-index.png" alt="" class="n5">
+					</div>
+				</div>
+			<!--分界线-->
+				<div class="fenjiexian"></div>
+	<div id="box">
+		<div id="small" class="small">
+			 <img src="images/3m.jpg" alt=""/> 
+			 <div id="mask"></div>   
+		</div>
+		<div id="big">
+			<img src="images/3b.jpg" class="bigImage"/>
+		</div>
+	</div>
+	<div class="shopinfo">
+			<!-- <a href="page.html">
+				<img src="img/1.jpg" alt="" />
+				<p style="color: red;font-size: 35px;font-weight: bold;">¥890</p>
+				<p style="color: #CCCCCC;">小米1</p>
+			</a>
+			<button style="width: 200px;height: 50px;border-radius: 8px;font-size: 18px;color: tomato;">加入购物车</button> -->
+	</div>
 </body>
 </html>
+<script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+		var $smallImg = $("#small img"),
+			$bigImg = $("#big img"),
+			$box = $("#box"),
+			$mask = $("#mask"),
+			smallImgW = $smallImg.width(),
+			smallImgH = $smallImg.height();
+		$("#small").on({
+			"mouseenter" :　function(){
+				$("#mask").show();
+				$("#big").show();
+			},
+			"mouseleave" : function(){
+				$("#mask").hide();
+				$("#big").hide();
+			},
+			"mousemove" : function(e){
+				var bigImgW = $bigImg.width();
+				var bigImgH = $bigImg.height();
+				var e = e || event;
+				var x = e.pageX - $box.offset().left - $mask.width()/2;
+				var y = e.pageY - $box.offset().top - $mask.height()/2;
+				var maxL = $box.width() - $mask.width();
+				var maxT = $box.height() - $mask.height();
+				x = Math.min(Math.max( 0 , x ) , maxL);
+				y = Math.min(Math.max( 0 , y ) , maxT);
+				$mask.css({
+					left : x,
+					top : y,
+					backgroundPositionX : -x,
+					backgroundPositionY : -y
+				})
+				
+				// 大图left / mask的left = 大图宽度/小图宽度  =  大图可视区宽度 / mask的宽度
+				var bigImgLeft = x*bigImgW / smallImgW;
+				var bigImgTop = y*bigImgH / smallImgH;
+				 
+				//设置大图的left和top值
+				$(".bigImage").css({
+					left : -bigImgLeft,
+					top : -bigImgTop
+				})
+			}
+		})
+		//获取路径信息
+ 		var str = location.href;//获取路径信息
+		console.log(str)
+ 		//http://127.0.0.1/shopCart1824/page.html?cname=classify002&pid=shop02
+ 		str = str.split( "?" )[1];//"cname=classify002&pid=shop02"
+ 		var arr = str.split("&");
+ 		var price = arr[0].split("=")[1];
+ 		var name = arr[1].split("=")[1];
+ 		var str ='';
+		str += `<a href="page.html">
+				<img src="img/1.jpg" alt="" />
+				<p style="color: red;font-size: 35px;font-weight: bold;">¥${price}</p>
+				<p style="color: #CCCCCC;">${name}</p>
+			</a>
+			<button style="width: 200px;height: 50px;border-radius: 8px;font-size: 18px;color: tomato;">加入购物车</button>`
+			$(".shopinfo").html( str );
+</script>
