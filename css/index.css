@@ -7,13 +7,15 @@
 
 .a4 { width: 76px; height: 40px; background: red; color: white; font-size: 14px; border-radius: 6px 6px 0 0; float: left; }
 
-.a5 { background: orange; color: red; }
+.selected1 { display: none !important; }
 
-.header { height: 200px; width: 200px; color: red; font-size: 18px; overflow: hidden; }
+.selected { display: block !important; }
+
+.header { height: 200px; width: 200px; color: red; font-size: 18px; overflow: hidden; opacity: 1; }
 
 .footer { min-width: 220px; height: 320px; -background: orange; float: left; margin: 8px; -text-align: center; }
 
-.nav, .logo, #nav, .banner, .case, .sel { width: 1200px; margin: 0 auto; }
+.nav, .logo, #nav, .banner, .case, .sel, footer, .wrap, .shoplist { width: 1200px; margin: 0 auto; }
 
 /*nav*/
 nav { height: 30px; background: #f6f6f6; }
@@ -26,7 +28,7 @@ nav .nav ul li a:hover { color: red; }
 .ol1 { position: absolute; background: white; display: none; }
 
 /*aside*/
-aside { width: 36px; height: 100%; background: black; position: fixed; right: 0; top: 0; }
+aside { width: 36px; height: 100%; background: black; position: fixed; right: 0; top: 0; z-index: 100; }
 aside ul { position: relative; }
 aside div { position: absolute; right: 56px; font-size: 12px; background: black; color: white; text-align: center; display: none; }
 aside i { color: #d7d7d7 !important; font-size: 20px !important; position: absolute; left: 30%; }
@@ -55,14 +57,15 @@ aside li:nth-child(7) div { width: 100px; height: 30px; line-height: 30px; botto
 aside li:nth-child(7) #returnTop { display: none; }
 
 /*logo*/
-.logo { height: 85px; -background: red; }
-.logo h1 { padding-top: 15px; float: left; }
-.logo ol { padding-top: 25px; margin-left: 460px; }
-.logo ol li { display: block; -background: blue; float: left; height: 30px; width: 141px; border-right: 1px dashed #CCCCCC; line-height: 30px; text-align: center; }
-.logo ol li i { font-size: 30px !important; }
-.logo input:nth-of-type(1) { width: 200px; height: 30px; border-right: none; float: left; margin-left: 70px; color: #CCCCCC; }
-.logo button { width: 42px; height: 36px; border-left: none; background: red; }
-.logo button i { color: white; font-size: 18px !important; }
+#logo { background: white; }
+#logo .logo { height: 85px; }
+#logo .logo h1 { padding-top: 15px; float: left; }
+#logo .logo ol { padding-top: 25px; margin-left: 460px; }
+#logo .logo ol li { display: block; -background: blue; float: left; height: 30px; width: 141px; border-right: 1px dashed #CCCCCC; line-height: 30px; text-align: center; }
+#logo .logo ol li i { font-size: 35px !important; color: red !important; }
+#logo .logo input:nth-of-type(1) { width: 200px; height: 30px; border-right: none; float: left; margin-left: 70px; color: #CCCCCC; }
+#logo .logo button { width: 42px; height: 36px; border-left: none; background: red; }
+#logo .logo button i { color: white; font-size: 18px !important; }
 
 /*小导航栏加选项卡*/
 #nav { height: 40px; -background: yellow; }
@@ -96,7 +99,7 @@ aside li:nth-child(7) #returnTop { display: none; }
 		opacity: 0;
 		
 	} */ /*right*/ }
-#banner .banner .left { font-size: 14px; color: #999999; min-height: 380px; width: 210px; float: left; background: white; }
+#banner .banner .left { display: none; font-size: 14px; color: #999999; min-height: 380px; width: 210px; float: left; background: white; }
 #banner .banner .left div { margin: 0 7px; width: 190px; height: 52px; border-bottom: 1px dashed #CCCCCC; }
 #banner .banner .left div span { width: 90px; display: inline-block; height: 20px; border-right: 1px solid #CCCCCC; text-align: center; line-height: 20px; margin: 20px 0 0 0; }
 #banner .banner .left div span i { margin-right: 5px; }
@@ -121,11 +124,39 @@ aside li:nth-child(7) #returnTop { display: none; }
 
 /*底栏选项卡*/
 #sel { background: #f6f6f6; }
-#sel .sel { height: 150px; background: white; position: relative; position: relative; }
+#sel .sel { height: 150px; background: white; position: relative; }
 #sel .sel .sel1 { position: absolute; left: 35%; top: 50%; }
-#sel .sel .sel1 div { height: 42px; text-align: center; line-height: 42px; border: 1px solid #ccc; float: left; background: #d7d7d7; font-size: 12px; color: #333; }
-#sel .sel .sel1 div:nth-child(1) { width: 92px; border-radius: 8px  0 0 8px; -background: pink; }
-#sel .sel .sel1 div:nth-child(2) { width: 40px; -background: red; }
-#sel .sel .sel1 div:nth-child(3) { width: 92px; border-radius: 0 8px 8px 0; -background: pink; }
+#sel .sel .sel1 div { height: 42px; text-align: center; line-height: 42px; border: 1px solid #ccc; float: left; background: #d7d7d7; font-size: 14px; color: #000; }
+#sel .sel .sel1 div:nth-child(1) { width: 92px; border: 1px solid #ccc; border-radius: 8px  0 0 8px; background: white; }
+#sel .sel .sel1 div:nth-child(2) { width: 40px; background: white; border: 1px solid #ccc; }
+#sel .sel .sel1 div:nth-child(3) { width: 92px; border: 1px solid #ccc; border-radius: 0 8px 8px 0; background: white; }
+
+/*footer*/
+footer .left { -background: pink; float: left; margin: 30px 0 0 50px; }
+footer .center { min-width: 662px; min-height: 110px; -background: orange; float: left; margin: 30px 0px; }
+footer .center ul li { list-style: outside !important; }
+footer .center ul li:hover { text-decoration: underline; }
+footer .center ul li a { font-size: 14px; color: #000; }
+footer .center div { float: left; margin: 0 55px; }
+footer .center div p { font-size: 16px; font-weight: bold; margin-bottom: 10px; }
+footer .right { float: right; -background: blue; }
+footer .right img { margin: 35px 50px 40px  0px; }
+footer .right p { font-size: 20px; color: #ccc; }
+
+/*向上轮播广播栏*/
+#ad { width: 1100px; height: 30px; -background: pink; margin: 0 82px; border-bottom: 1px dashed #919191; line-height: 30px; color: #919191; position: relative; overflow: hidden; }
+#ad span:nth-child(1) { font-size: 14px; float: left; }
+
+#inner { /* overflow: hidden; */ position: relative; }
+#inner #box { display: block; width: 500px; float: left; margin-left: 80px; position: absolute; top: 0px; left: 0px; z-index: 10000; }
+#inner #box div { height: 30px; -background: orange; }
+#inner #box div li { float: left; font-size: 14px; margin: 0 5px; }
+#inner #box div li:hover { text-decoration: underline; }
+
+/*最底部*/
+.wrap { padding-top: 20px; }
+.wrap p { text-align: center; font-size: 14px; color: #ccc; margin: 10px 0; }
+.wrap img { float: left; margin: 0 20px; }
+.wrap .pic { margin: 30px 0 0 302px; }
 
 /*# sourceMappingURL=index.css.map */

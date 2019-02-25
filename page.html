@@ -52,9 +52,9 @@
 		#mask{
 				width:175.5px;
 				height:175.5px;
-				background:red;
+				background:blue;
 				opacity:0.4;
-				/* background: url(images/3m.jpg); */ 
+				/* background: url(images/3m.jpg); */
 				position:absolute;
 				top:0;
 				left:0;
@@ -231,7 +231,6 @@
 			},
 			"mouseleave" : function(){
 				$("#mask").hide();
-				$("#big").hide();
 			},
 			"mousemove" : function(e){
 				var bigImgW = $bigImg.width();
@@ -268,12 +267,12 @@
  		str = str.split( "?" )[1];//"cname=classify002&pid=shop02"
  		var arr = str.split("&");
  		var price = arr[0].split("=")[1];
- 		var name = arr[1].split("=")[1];
+ 		/* var name = encodeURI(arr[1].split("=")[1]); */
  		var str ='';
 		str += `<a href="page.html">
 				<img src="img/1.jpg" alt="" />
 				<p style="color: red;font-size: 35px;font-weight: bold;">¥${price}</p>
-				<p style="color: #CCCCCC;">${name}</p>
+				<p style="color: #000;font-size:25px;">卷皮服装</p>
 			</a>
 			<button style="width: 200px;height: 50px;border-radius: 8px;font-size: 18px;color: tomato;">加入购物车</button>`
 			$(".shopinfo").html( str );

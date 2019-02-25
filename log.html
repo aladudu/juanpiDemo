@@ -4,9 +4,108 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>登录界面</title>
+	<title>注册界面</title>
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="icon/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/reg.css"/>
 </head>
-<body>
-	登录界面
+<body style="background: #f6f6f6;">
+	<!--nav-->
+		<nav class="clear_fix">
+			<div class="nav">
+				<div class="a3">0</div>
+				<ul>
+					<li class="li1"><a href="">客户服务</a>
+						<ol class="ol1">
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">联系客服</a></li>
+						</ol>
+					</li>
+					<li><a href="">商家中心</a></li>
+					<li>
+						<a href="">
+							<i class="iconfont icon-gouwu a2"></i>
+							购物袋
+						</a>
+					</li>
+					<li><a href="">商家入驻</a></li>
+					<li><a href="">我的订单</a></li>
+					<li><a href="reg.html" class="a2">免费注册</a></li>
+					<li><a href="log.html">登录</a></li>
+				</ul>
+			</div>
+		</nav>
+	<!--logo-->
+		<div id="logo" class="clear_fix" style="background: white;">
+			<div class="logo">
+				<!--left-->
+				<h1>
+					<img src="images/logo_03.jpg" alt="">
+				</h1>
+				<!--center-->
+				<ol class="ol2">
+					<li><a href="">
+							<i class="iconfont icon-lishi"></i>
+							<span>10:00开抢</span>
+						</a>
+					</li>
+					<li><a href="">
+							<i class="iconfont icon-lishi"></i>
+							<span>买手砍价</span>
+						</a>
+					</li>
+					<li><a href="">
+							<i class="iconfont icon-lishi"></i>
+							<span>验货质检</span>
+						</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+	<!--分界线-->
+		<div class="fenjiexian"></div>
+	<!--注册界面-->
+	<div id="reg">
+		<div class="top">
+			<span>新用户注册/</span>
+			<span>注册卷皮网，赢积分换豪礼！</span>
+			<span>已有账户，<a href="reg.html">立即去注册</a></span>
+		</div>
+		<ol id="content">
+					<li id="tab1">
+						<tr>
+							<td>登录账号：</td><td><input type="text" id="uphone"/ autofocus="autofocus"><br>
+							<span id="s1"></span><br>
+							</td>
+						</tr>
+						<tr>
+							<td>登录密码：</td><td><input type="password" id="upwd"/><br>
+							<span id="s2"></span></td><br>
+						</tr>
+						<tr>
+							<td><input type="button" value="登录" id="btn"/></td>
+					</li>
+					<img src="images/reg_03.jpg" alt="">
+		</ol>		
+	</div>
 </body>
 </html>
+<script src="js/public.js"></script>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+	btn.onclick = function(){
+		var a = uphone.value;
+		var b = upwd.value;
+		var obj1 = getCookie("infor");
+		var c = obj1.phone;
+		var d = obj1.pwd;
+		//console.log(b,d);
+		if(a == c && b == d){
+			window.location = "index.html";
+		}else{
+			alert("登录失败,请重新登录")
+			window.location = "log.html";
+		}
+	}
+</script>

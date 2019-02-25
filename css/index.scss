@@ -23,17 +23,15 @@
 	border-radius: 6px 6px 0 0;
 	float: left;
 }
-//背景变为红色
-.a5{
-	background: orange;
-	color: red;
-}
+.selected1{display: none!important;}
+.selected{display: block!important;}
 .header{
 	height:200px;
 	width: 200px;
 	color: red;
 	font-size: 18px;
 	overflow: hidden;
+	opacity: 1;
 }
 .footer{
 	min-width: 220px;
@@ -41,10 +39,9 @@
 	-background: orange;
 	float: left;
 	margin:8px;
-	
 	-text-align: center;
 }
-.nav,.logo,#nav,.banner,.case,.sel{
+.nav,.logo,#nav,.banner,.case,.sel,footer,.wrap,.shoplist{
 	width: 1200px;
 	margin: 0 auto;
 }
@@ -91,6 +88,7 @@ aside{
 	position: fixed;
 	right: 0;
 	top: 0;
+	z-index: 100;
 	ul{
 		position: relative;
 	}
@@ -214,46 +212,49 @@ aside{
 	}
 }
 /*logo*/
-.logo{
-	height:85px;
-	-background: red;
-	h1{
-		padding-top: 15px;
-		float: left;
-	}
-	ol{
-		padding-top: 25px;
-		margin-left: 460px;
-		li{
-			display: block;
-			-background: blue;
+#logo{
+	background: white;
+	.logo{
+		height:85px;
+		h1{
+			padding-top: 15px;
 			float: left;
-			height: 30px;
-			width: 141px;
-			border-right: 1px dashed #CCCCCC;
-			line-height: 30px;
-			text-align: center;
-			i{
-				font-size: 30px!important;
+		}
+		ol{
+			padding-top: 25px;
+			margin-left: 460px;
+			li{
+				display: block;
+				-background: blue;
+				float: left;
+				height: 30px;
+				width: 141px;
+				border-right: 1px dashed #CCCCCC;
+				line-height: 30px;
+				text-align: center;
+				i{
+					font-size: 35px!important;
+					color: red!important;
+				}
 			}
 		}
-	}
-	input:nth-of-type(1){
-		width:200px;
-		height: 30px;
-		border-right: none;
-		float: left;
-		margin-left: 70px;
-		color: #CCCCCC;
-	}
-	button{
-		width: 42px;
-		height: 36px;
-		border-left: none;
-		background: red;
-		i{
-			color: white;
-			font-size: 18px!important;
+		input:nth-of-type(1){
+			width:200px;
+			height: 30px;
+			border-right: none;
+			float: left;
+			margin-left: 70px;
+			color: #CCCCCC;
+		}
+		button{
+			width: 42px;
+			height: 36px;
+			border-left: none;
+			background: red;
+			i{
+				color: white;
+				font-size: 18px!important;
+			}
 		}
 	}
 }
@@ -287,6 +288,7 @@ aside{
 	.banner{
 		/*banner-left*/
 		.left{
+			display: none;
 		font-size: 14px;
 		color: #999999;
 		min-height: 380px;
@@ -431,7 +433,6 @@ aside{
 		height: 150px;
 		background: white;
 		position: relative;
-		position: relative;
 		.sel1{
 			position: absolute;
 			left: 35%;
@@ -443,25 +444,138 @@ aside{
 				border:1px solid #ccc;
 				float: left;
 				background: #d7d7d7;
-				font-size: 12px;
-				color: #333;
+				font-size: 14px;
+				color: #000;
 					&:nth-child(1){
 					width: 92px;
+					border: 1px solid #ccc;
 					border-radius: 8px  0 0 8px;
-					-background: pink;
+					background: white;
 					}
 					&:nth-child(2){
 					width: 40px;
-					-background: red;
+					background: white;
+					border: 1px solid #ccc;
 					}
 					&:nth-child(3){
 					width: 92px;
+					border: 1px solid #ccc;
 					border-radius:  0 8px  8px 0 ;
-					-background: pink;
+					background: white;
 					}
 				}
 		}
 		
 	
+	}
+}
+/*footer*/
+footer{
+	.left{
+		-background: pink;
+		float: left;
+		margin: 30px 0 0 50px;
+	}
+	.center{
+		min-width: 662px;
+		min-height: 110px;
+		-background: orange;
+		float: left;
+		margin: 30px 0px;
+		ul{
+			li{
+				list-style:outside !important;
+				&:hover{
+					text-decoration: underline;
+				}
+				a{
+					font-size: 14px;
+					color: #000;
+				}
+			}
+		}
+		div{
+			float: left;
+			margin: 0 55px;
+			p{
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.right{
+		float: right;
+		-background: blue;
+		img{
+			margin: 35px 50px 40px  0px;
+		}
+		p{
+			font-size: 20px;
+			color: #ccc;
+		}
+	}
+}
+/*向上轮播广播栏*/
+#ad{
+	width: 1100px;
+	height: 30px;
+	-background: pink;
+	margin:0 82px;
+	border-bottom:1px dashed #919191;
+	line-height: 30px;
+	color: #919191;
+	position: relative;
+	overflow: hidden;
+	span:nth-child(1){
+		font-size: 14px;
+		float: left;
+	}
+	
+}
+#inner{
+		/* overflow: hidden; */
+	position: relative;
+	#box{
+		display: block;
+		width: 500px;
+		float: left;
+		margin-left:80px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 10000;
+		div{
+			height: 30px;
+			-background: orange;
+			li{
+				float: left;
+				font-size: 14px;
+				margin: 0 5px;
+				&:hover{
+						text-decoration: underline;
+					}
+				}
+
+			
+		}
+	}
+
+}
+/*最底部*/
+.wrap{
+	padding-top: 20px;
+	p{
+		text-align: center;
+		font-size: 14px;
+		color: #ccc;
+		margin: 10px 0;
+	}
+	img{
+		float: left;
+		margin:0 20px;
+	}
+	.pic{
+		margin:30px 0 0 302px;
 	}
 }
