@@ -69,7 +69,7 @@ aside li:nth-child(7) #returnTop { display: none; }
 
 /*小导航栏加选项卡*/
 #nav { height: 40px; -background: yellow; }
-#nav div { float: left; text-align: center; line-height: 40px; margin-right: 25px; font-size: 12px; }
+#nav div { float: left; text-align: center; line-height: 40px; margin-right: 25px; font-size: 12px; cursor: pointer; }
 #nav .n5 { display: none; position: absolute; }
 #nav .nd5:hover .n5 { display: block; z-index: 10; }
 
