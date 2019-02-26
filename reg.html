@@ -105,6 +105,7 @@
 		//console.log(val)
 		if(reg.test(val)){
 			s1.innerHTML = "账户格式正确";
+			s1.className = "green";
 			return val;
 		}else{
 			s1.innerHTML = "账户格式错误";
@@ -118,6 +119,7 @@
 		var val = this.value;
 		if(reg.test(val)){
 			s2.innerHTML = "密码格式正确";
+			s2.className = "green";
 			return val;
 		}else{
 			s2.upwd = "密码不能少于6位字符";
