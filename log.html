@@ -102,7 +102,13 @@
 		var d = obj1.pwd;
 		//console.log(b,d);
 		if(a == c && b == d){
+			s1.innerHTML = "√";
+			s2.innerHTML = "√";
+			s1.className = "green";
+			s2.className = "green";
 			window.location = "index.html";
+			
+		
 		}else{
 			alert("登录失败,请重新登录")
 			window.location = "log.html";

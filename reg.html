@@ -130,9 +130,11 @@
 		var val = this.value;
 		if( upwd == val ){
 			s3.innerHTML = "√";
+			s3.className = "green";
 			return val;
 		}else{
 			s3.innerHTML = "×";
+			s3.className = "red";
 		}
 	}
 	//点击注册,存入cookie中
